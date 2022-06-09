@@ -27,21 +27,6 @@ CREATE TABLE `categorias` (
   `NombreCategoria` varchar(35) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `categorias`
---
-
-INSERT INTO `categorias` (`idCategorias`, `NombreCategoria`) VALUES
-(1, 'MOUSE'),
-(2, 'TINTAS PARA IMPRESORAS'),
-(3, 'IMPRESORAS'),
-(4, 'USB'),
-(5, 'MICROPROCESADORES'),
-(6, 'TECLADO'),
-(7, 'MONITORES'),
-(8, 'PARLANTES'),
-(9, 'OTROS');
-
 -- --------------------------------------------------------
 
 --
@@ -86,38 +71,6 @@ CREATE TABLE `productos` (
   `categorias_idCategorias` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `productos`
---
-
-INSERT INTO `productos` (`idProductos`, `NombreProducto`, `Descripcion`, `PrecioCompra`, `PrecioVenta`, `Stock`, `FechaRegistro`, `categorias_idCategorias`) VALUES
-(1, 'MOUSE GENIUS', 'Mouse Genius Alámbrico DX110 Negro', '19.90', '24.90', 20, '2019-01-01', 1),
-(2, 'PENTIUM III 600', 'Microprocesador Pentium III 600', '120.00', '150.00', 5, '2019-01-01', 5),
-(3, 'PENTIUM IV 2.5 GB', 'Microprocesador Pentium IV 2.5 GB', '120.00', '150.00', 5, '2019-01-01', 5),
-(4, 'FUNDAS NAYLON', 'Funda de color negro', '30.00', '40.00', 35, '2019-01-01', 9),
-(5, 'USB KINGSTON', 'Sandisk Cruzer metal 16GB interfaz 2.0', '19.90', '24.90', 15, '2019-01-01', 4),
-(6, 'TINTA BJC21 B/N', 'Tinta BJC21 Blanco/Negro x unidad', '15.00', '20.00', 15, '2019-01-01', 2),
-(7, 'IMPRESORA EPSON', 'Impresora Multifuncional Epson EcoTank L3210', '800.00', '939.99', 5, '2019-01-01', 3),
-(8, 'MONITOR SYNMASTER 3N', 'Monitor Synmaster 3N color plateado', '200.00', '300.00', 10, '2019-01-01', 7),
-(9, 'MONITOR VIEWSONIC', 'Monitor Viewsonic color negro', '350.00', '450.00', 10, '2019-01-01', 7),
-(10, 'PENTIUM MMX 260', 'Microprocesador Pentium MMX 260 GB', '90.00', '120.00', 5, '2019-01-01', 5),
-(11, 'MOUSE MICROSOFT', 'Mouse Microsoft PN7-00001 color negro', '89.00', '119.00', 15, '2019-01-01', 1),
-(12, 'MEMORIA RAM DIMM 64', 'Memoria RAM DIMM 64 GB', '50.00', '60.00', 10, '2019-01-01', 5),
-(13, 'MEMORIA RAM DIMM 128', 'Memoria RAM DIMM 128 GB', '70.00', '82.00', 10, '2019-01-01', 5),
-(14, 'IMPRESORA MULTIFUNCIONAL HP', 'Impresora Multi HP Smart Tank 533 Plus ADF', '1000.00', '1269.00', 3, '2019-01-01', 1),
-(15, 'IMPRESORA LASER SAMSUNG', 'Impresora Láser Multi Samsung M4070fr A4 Usb 2.0', '1000.00', '1370.00', 3, '2019-01-01', 1),
-(16, 'TINTA BJC21 COLOR', 'Tinta BJC21 Color Negro', '15.00', '20.00', 15, '2019-01-01', 2),
-(17, 'TINTA B/n  484', 'Tinta B/n  484 Color Rojo', '20.00', '25.00', 15, '2019-01-01', 2),
-(18, 'TINTA Color 624', 'Tinta Color 624 Color Amarillo', '20.00', '25.00', 15, '2019-01-01', 2),
-(19, 'TECLADO PC HYPERX', 'Teclado de membrana gaming HyperX Alloy Core RGB', '189.00', '219.90', 20, '2019-01-01', 6),
-(20, 'MOUSE LOGITECH', 'Mouse Gamer Logitech G502 Hero 16000dpi RGB', '200.00', '249.00', 15, '2019-01-01', 6),
-(21, 'USB KINGSTON 32 GB', 'Usb 3.2 Kingston Data Traveler 32GB negro', '28.90', '34.90', 15, '2019-01-01', 4),
-(22, 'USB KINGSTON 128 GB', 'Usb Kingston DT100G3 128GB', '70.90', '84.90', 15, '2019-01-01', 4),
-(23, 'USB HP 128GB', 'HP X785W USB 3.0 128GB Pendrive', '85.01', '111.99', 15, '2019-01-01', 4),
-(24, 'PARLANTES BOSE ', 'Parlante Bluetooth Bose Revolve Resistente al agua', '850.00', '959.00', 5, '2019-01-01', 8),
-(25, 'PARLANTES PC TERAWARE', 'Parlantes para pc Teraware usb 2.0 y 3.5 mm negro', '15.10', '21.90', 15, '2019-01-01', 8),
-(26, 'MOUSE LENOVO', 'Mouse inalámbrico Lenovo 530 (gris platino)', '45.00', '59.00', 15, '2019-01-01', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -129,15 +82,6 @@ CREATE TABLE `roles` (
   `Role` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `roles`
---
-
-INSERT INTO `roles` (`IdRoles`, `Role`) VALUES
-(1, 'Administrador'),
-(2, 'Cliente'),
-(3, 'Moderador');
-
 -- --------------------------------------------------------
 
 --
@@ -145,17 +89,9 @@ INSERT INTO `roles` (`IdRoles`, `Role`) VALUES
 --
 
 CREATE TABLE `tipocomprobante` (
-  `dTipoComprobante` int(11) NOT NULL,
+  `idTipoComprobante` int(11) NOT NULL,
   `NombreTipoComprobante` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tipocomprobante`
---
-
-INSERT INTO `tipocomprobante` (`dTipoComprobante`, `NombreTipoComprobante`) VALUES
-(1, 'BOLETA'),
-(2, 'FACTURA');
 
 -- --------------------------------------------------------
 
@@ -175,13 +111,6 @@ CREATE TABLE `usuarios` (
   `Role` varchar(50) DEFAULT NULL,
   `Estado` tinyint(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`idUsuario`, `NID`, `Nombre`, `Apellidos`, `Celular`, `Email`, `User`, `Password`, `Role`, `Estado`) VALUES
-(1, '12345678', 'admin', 'admin', '123456789', 'admin@gmail.com', 'admin', 'admin', 'Administrador', 1);
 
 -- --------------------------------------------------------
 
@@ -236,7 +165,7 @@ ALTER TABLE `roles`
 -- Indices de la tabla `tipocomprobante`
 --
 ALTER TABLE `tipocomprobante`
-  ADD PRIMARY KEY (`dTipoComprobante`);
+  ADD PRIMARY KEY (`idTipoComprobante`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -288,7 +217,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tipocomprobante`
 --
 ALTER TABLE `tipocomprobante`
-  MODIFY `dTipoComprobante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idTipoComprobante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
