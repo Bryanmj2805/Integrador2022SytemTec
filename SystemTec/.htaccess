@@ -1,0 +1,13 @@
+#CONFIG DE APACHE
+# Activar RewriteEngine (Permite utilizar URL Personalizadas)
+RewriteEngine on
+
+#Permite el acceso a nuestro directorio
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Permite el acceso a los archivos utilizando la URL.
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Permite obtener todos los elementos que se pasen por la URL
+#Luego estas pasan a un archivo index para realizar las solicitudes
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

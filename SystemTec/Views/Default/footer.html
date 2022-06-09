@@ -1,0 +1,32 @@
+<footer class="border-top footer text-muted">
+    <div align = 'center'>
+        <p>&copy;SystemTEC</p>
+    </div>
+</footer>
+<script src="<?php echo URL.RQ ?>js/bootstrap/jquery-3.6.0.min.js"></script>
+<script src="<?php echo URL.RQ ?>js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="<?php echo URL.RQ ?>js/cargarImagen.js"></script>
+<script src="<?php echo URL.RQ ?>js/usuario.js"></script>
+<script src="<?php echo URL.RQ ?>js/principal.js"></script>
+<script src="<?php echo URL.RQ ?>js/app.js"></script>
+<script>
+    //Para entender la validacion del formulario
+    //equipo visualizar https://www.youtube.com/watch?v=ReK_vlT8vT0&t=498s
+    (function (){
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+            .forEach(function(form){
+                form.addEventListener('submit',function(event){
+                if (!form.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            },false)
+        })
+    })();
+</script>
+</body>
+</html>
